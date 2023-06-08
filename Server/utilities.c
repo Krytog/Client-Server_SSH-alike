@@ -86,6 +86,7 @@ void spawn_feature(int socket, int client) {
         exit(EXIT_FAILURE);
     }
 
+    signal(SIGCHLD, SIG_IGN);
     pid_t resolver = fork();
 
     if (resolver > 0) {
